@@ -256,6 +256,7 @@ with tab2:
         ax.set_ylabel("Frequency")
         ax.legend()
         st.pyplot(fig)
+        plt.close(fig)
 
         st.subheader("Rata-rata Total per Jenis Produk")
         fig2, ax2 = plt.subplots(figsize=(6, 3))
@@ -263,6 +264,7 @@ with tab2:
             kind="barh", ax=ax2, color="#10B981")
         ax2.set_xlabel("Avg Total Penjualan")
         st.pyplot(fig2)
+        plt.close(fig2)
 
     else:
         st.warning("Dataset data_penjualan.csv tidak ditemukan di folder data/. Copy file terlebih dahulu.")
@@ -271,6 +273,8 @@ with tab2:
 # TAB 3 — Model Performance
 # ─────────────────────────────────────────────
 with tab3:
+    import matplotlib.pyplot as plt  # explicit import to ensure availability in this scope
+
     st.subheader("Model Info")
     if model is not None:
         st.success("✅ Model berhasil dimuat")
@@ -291,6 +295,7 @@ with tab3:
         importances.sort_values().plot(kind="barh", ax=ax4, color="#10B981")
         ax4.set_xlabel("Importance")
         st.pyplot(fig4)
+        plt.close(fig4)
     else:
         st.error("Model belum tersedia. Jalankan training pipeline terlebih dahulu.")
 
