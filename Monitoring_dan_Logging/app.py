@@ -82,7 +82,7 @@ if not st.session_state.get("prometheus_server_started", False):
 
 # Konfigurasi URL Pushgateway (Ngrok) untuk Mendorong (Push) Metrik ke Lokal
 # PENTING: Ganti URL ini dengan URL Ngrok Anda setiap kali Ngrok direstart!
-NGROK_PUSHGATEWAY_URL = "https://craziness-donut-trickster.ngrok-free.dev" 
+NGROK_PUSHGATEWAY_URL = " https://frolic-jigsaw-igloo.ngrok-free.dev" 
 
 def update_gc_metrics():
     """Baca statistik GC Python secara real-time lalu update Gauge metrics.
