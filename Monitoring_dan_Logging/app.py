@@ -4,6 +4,8 @@ import joblib
 import os
 import time
 import gc as python_gc  # Modul GC bawaan Python untuk membaca statistik garbage collector
+import matplotlib.pyplot as plt
+import seaborn as sns
 from prometheus_client import (
     Counter, Histogram, Gauge,
     push_to_gateway, CollectorRegistry,
@@ -236,9 +238,6 @@ with tab2:
     DATA_PATH = os.path.join(os.path.dirname(__file__),
                              "..", "data", "data_penjualan.csv")
     if os.path.exists(DATA_PATH):
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-
         df_raw = pd.read_csv(DATA_PATH, sep=";")
         st.subheader("Preview Dataset Penjualan")
         st.dataframe(df_raw.head(20), width='stretch')
